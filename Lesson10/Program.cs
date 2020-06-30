@@ -6,7 +6,7 @@ namespace Lesson10
     {
         public const string ProgramName = "Календарь"; //тестовый коммит
 
-        static void Main(string[] args)
+        static void Main(string[] args) // проверка связи гита и vs
         {
             //ввод от клиента, пол и имя
 
