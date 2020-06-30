@@ -4,7 +4,7 @@ namespace Lesson10
 {
     class Program
     {
-        public const string ProgramName = "Календарь";
+        public const string ProgramName = "Календарь"; //тестовый коммит
 
         static void Main(string[] args)
         {
