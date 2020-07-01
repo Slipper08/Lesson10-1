@@ -4,20 +4,18 @@ namespace Lesson10
 {
     class Program
     {
-        public const bool isMan = true;
-        public const bool isWoman = false;
 
         static void Main(string[] args)
         {
             //клиент вводит пол и имя
-            //Step1(false, "Иванова Ольга");
+            Step1((GenderEnum)0, "Иванова Ольга");
             //Step2(true, "Петров Иван");
-            StepWeek1(255);
+            StepWeek1((DayOfWeekEnum)5);
         }
 
-        static void Step1(bool gender, string name)
+        static void Step1(GenderEnum gender, string name)
         {
-            if (gender == true)//муж - true, жун - false
+            if (gender == GenderEnum.Man)
             {
                 Console.WriteLine($"Еважаемый, {name}!");
             }
@@ -33,7 +31,7 @@ namespace Lesson10
 
         static void Step2(bool gender, string name)
         {
-            if (gender == isMan)//муж - true, жун - false
+            if (gender == Gender.isMan)//муж - true, жун - false
             {
                 Console.WriteLine($"Уважаемый, {name}!");
             }
@@ -47,15 +45,46 @@ namespace Lesson10
             Console.ReadLine();
         }
 
-        static void StepWeek1(byte dayOfWeek)
+        static void StepWeek1(DayOfWeekEnum dayOfWeek)
         {
-            if (dayOfWeek == 6 || dayOfWeek == 7) //1...7 дни недели начиная с понедельника
+            if (dayOfWeek == DayOfWeekEnum.Saturday || dayOfWeek == DayOfWeekEnum.Sunday) 
             {
-                Console.WriteLine("Выходной день");
+                Console.WriteLine($"{dayOfWeek} - выходной день");
             }
             else
             {
-                Console.WriteLine("Рабочий день");
+                Console.WriteLine($"{dayOfWeek} - рабочий день");
+            }
+        }
+
+        static string DayOfWeekEnumToRussianString(DayOfWeekEnum dayOfWeek)
+        {
+            string output = "";
+            switch (dayOfWeek)
+            {
+                case DayOfWeekEnum.Monday:
+                    output = "";
+                    break;
+                case DayOfWeekEnum.Tuesday:
+                    output = "";
+                    break;
+                case DayOfWeekEnum.Wensday:
+                    output = "";
+                    break;
+                case DayOfWeekEnum.Thursday:
+                    output = "";
+                    break;
+                case DayOfWeekEnum.Friday:
+                    output = "";
+                    break;
+                case DayOfWeekEnum.Saturday:
+                    output = "";
+                    break;
+                case DayOfWeekEnum.Sunday:
+                    output = "";
+                    break;
+                default:
+                    break;
             }
         }
     }
