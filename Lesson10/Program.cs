@@ -4,91 +4,59 @@ namespace Lesson10
 {
     class Program
     {
-        //public const string ProgramName = "Календарь"; //тестовый коммит
+        public const bool isMan = true;
+        public const bool isWoman = false;
 
-        //static void Main(string[] args) // проверка связи гита и vs
-        //{
-        //    //ввод от клиента, пол и имя
+        static void Main(string[] args)
+        {
+            //клиент вводит пол и имя
+            //Step1(false, "Иванова Ольга");
+            //Step2(true, "Петров Иван");
+            StepWeek1(255);
+        }
 
-        //    Step1((GenderEnum)0, "Иванова Ольга");
-        //    //Step2(true, "Петров Иван");
+        static void Step1(bool gender, string name)
+        {
+            if (gender == true)//муж - true, жун - false
+            {
+                Console.WriteLine($"Еважаемый, {name}!");
+            }
+            else
+            {
+                Console.WriteLine($"Уважаемая, {name}!");
+            }
 
-        //    StepWeek1((DayOfWeekEnum)6);
+            Console.WriteLine("Приветствуем Вас на нашем сайте!");
 
-        //    PrintAllDays();
-        //    PrintAllGenders();
-        //}
+            Console.ReadLine();
+        }
 
-        //static void Step1(GenderEnum gender, string name)
-        //{
-        //    if (gender == GenderEnum.Man)
-        //    {
-        //        Console.WriteLine($"Уважаемый, {name}!");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine($"Уважаемая, {name}!");
-        //    }
+        static void Step2(bool gender, string name)
+        {
+            if (gender == isMan)//муж - true, жун - false
+            {
+                Console.WriteLine($"Уважаемый, {name}!");
+            }
+            else
+            {
+                Console.WriteLine($"Уважаемая, {name}!");
+            }
 
-        //    Console.WriteLine("Приветствуем на нашем сайте!");
-        //}
+            Console.WriteLine("Приветствуем Вас на нашем сайте!");
 
-        //static void StepWeek1(DayOfWeekEnum dayOfWeek)
-        //{
-        //    if(dayOfWeek == DayOfWeekEnum.Saturday || dayOfWeek == DayOfWeekEnum.Sunday) 
-        //    {
-        //        Console.WriteLine($"{DayToRussian(dayOfWeek)} - выходной день");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine($"{DayToRussian(dayOfWeek)} - рабочий день");
-        //    }
-        //}
+            Console.ReadLine();
+        }
 
-        //static string DayToRussian(DayOfWeekEnum dayOfWeek) 
-        //{
-        //    string output = "";
-        //    switch (dayOfWeek)
-        //    {
-        //        case DayOfWeekEnum.Monday:
-        //            output = "понедельник";
-        //            break;
-        //        case DayOfWeekEnum.Tuesday:
-        //            output = "вторник";
-        //            break;
-        //        case DayOfWeekEnum.Wednesday:
-        //            output = "среда";
-        //            break;
-        //        case DayOfWeekEnum.Thursday:
-        //            output = "четверг";
-        //            break;
-        //        case DayOfWeekEnum.Friday:
-        //            output = "пятница";
-        //            break;
-        //        case DayOfWeekEnum.Saturday:
-        //            output = "суббота";
-        //            break;
-        //        case DayOfWeekEnum.Sunday:
-        //            output = "воскресенье";
-        //            break;
-        //    }
-        //    return output;
-        //}
-
-        //static void PrintAllDays()
-        //{
-        //    foreach (var item in Enum.GetValues(typeof(DayOfWeekEnum)))
-        //    {
-        //        Console.WriteLine(item);
-        //    }
-        //}
-
-        //static void PrintAllGenders()
-        //{
-        //    foreach (var item in Enum.GetValues(typeof(GenderEnum)))
-        //    {
-        //        Console.WriteLine(item);
-        //    }
-        //}
+        static void StepWeek1(byte dayOfWeek)
+        {
+            if (dayOfWeek == 6 || dayOfWeek == 7) //1...7 дни недели начиная с понедельника
+            {
+                Console.WriteLine("Выходной день");
+            }
+            else
+            {
+                Console.WriteLine("Рабочий день");
+            }
+        }
     }
 }
