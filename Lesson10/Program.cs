@@ -8,9 +8,10 @@ namespace Lesson10
         static void Main(string[] args)
         {
             //клиент вводит пол и имя
-            Step1((GenderEnum)0, "Иванова Ольга");
+            //Step1((GenderEnum)0, "Иванова Ольга");
             //Step2(true, "Петров Иван");
-            StepWeek1((DayOfWeekEnum)5);
+            //StepWeek1((DayOfWeekEnum)7);
+            PrintAllDays();
         }
 
         static void Step1(GenderEnum gender, string name)
@@ -49,43 +50,55 @@ namespace Lesson10
         {
             if (dayOfWeek == DayOfWeekEnum.Saturday || dayOfWeek == DayOfWeekEnum.Sunday) 
             {
-                Console.WriteLine($"{dayOfWeek} - выходной день");
+                Console.WriteLine($"{DayToRussian(dayOfWeek)} - выходной день");
             }
             else
             {
-                Console.WriteLine($"{dayOfWeek} - рабочий день");
+                Console.WriteLine($"{DayToRussian(dayOfWeek)} - рабочий день");
             }
         }
 
-        static string DayOfWeekEnumToRussianString(DayOfWeekEnum dayOfWeek)
+        static string DayToRussian(DayOfWeekEnum dayOfWeek)
         {
             string output = "";
             switch (dayOfWeek)
             {
                 case DayOfWeekEnum.Monday:
-                    output = "";
+                    output = "понедельник";
                     break;
                 case DayOfWeekEnum.Tuesday:
-                    output = "";
+                    output = "вторник";
                     break;
                 case DayOfWeekEnum.Wensday:
-                    output = "";
+                    output = "среда";
                     break;
                 case DayOfWeekEnum.Thursday:
-                    output = "";
+                    output = "четверг";
                     break;
                 case DayOfWeekEnum.Friday:
-                    output = "";
+                    output = "пятница";
                     break;
                 case DayOfWeekEnum.Saturday:
-                    output = "";
+                    output = "суббота";
                     break;
                 case DayOfWeekEnum.Sunday:
-                    output = "";
+                    output = "воскресенье";
                     break;
                 default:
                     break;
             }
+            return output;
+        }
+
+        static void PrintAllDays()
+        {
+            foreach (var item in Enum.GetValues(typeof(DayOfWeekEnum)))
+            {
+                Console.WriteLine(item);
+            }
+
+
+            Console.ReadLine();
         }
     }
 }
